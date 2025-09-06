@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Send to Bot</title>
+<style>body{font-family:system-ui;margin:12px;width:320px}textarea{width:100%;height:120px}button{width:100%;padding:8px;margin-top:8px}</style>
+</head><body>
+<h3>Send to Bot</h3>
+<textarea id="text" placeholder="Type or paste text here..."></textarea>
+<button id="send">Send Now</button>
+<div id="status" style="margin-top:8px;color:#333;font-size:13px"></div>
+<script>
+document.getElementById('send').addEventListener('click', () => {
+  const t = document.getElementById('text').value.trim();
+  if (!t) { document.getElementById('status').textContent = 'Enter text first.'; return; }
+  fetch('http://localhost:3000/send', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({text:t})})
+    .then(r=>r.json()).then(j=> document.getElementById('status').textContent = JSON.stringify(j))
+    .catch(e=> document.getElementById('status').textContent = 'Error: '+e);
+});
+</script>
+</body></html>
