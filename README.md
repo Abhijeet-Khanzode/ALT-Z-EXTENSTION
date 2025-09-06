@@ -28,7 +28,7 @@ Use **Ctrl+C** to copy normally, and **Alt+Z** to instantly forward text to your
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/<your-username>/ALT-Z-Extension.git
+   git clone https://github.com/Abhijeet-Khanzode/ALT-Z-EXTENSTION.git
 Open Chrome → Go to chrome://extensions/.
 
 Enable Developer Mode (top right).
